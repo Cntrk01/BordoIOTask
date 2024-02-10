@@ -30,6 +30,7 @@ class HomeViewModel @Inject constructor(private val bordoHomeUseCase: BordoHomeU
                 is Response.Loading->{
                     _state.update { homeState->
                         homeState.copy(
+                            error = null,
                             loading = true
                         )
                     }

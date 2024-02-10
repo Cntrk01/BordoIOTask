@@ -1,11 +1,11 @@
 package com.example.bordoiotask.domain.repository
 
-import com.example.bordoiotask.data.response.BordoItem
-import com.example.bordoiotask.data.response.BordoList
+import com.example.bordoiotask.data.response.BordoHomeItem
+import com.example.bordoiotask.data.response.BordoProjectsItem
 import com.example.bordoiotask.data.response.Response
 import kotlinx.coroutines.flow.Flow
 
 interface BordoRepository {
-    suspend fun bordoGetHome() : Flow<Response<List<BordoItem>>>
-    suspend fun bordoGetProject() : Flow<Response<List<BordoItem>>>
+    suspend fun bordoGetHome() : Flow<Response<List<BordoHomeItem>>>
+    suspend fun bordoGetProject() : Flow<Response<List<BordoProjectsItem>>>
 }
