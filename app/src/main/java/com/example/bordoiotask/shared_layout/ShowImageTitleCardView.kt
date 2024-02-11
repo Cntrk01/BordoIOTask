@@ -2,7 +2,9 @@ package com.example.bordoiotask.shared_layout
 
 import android.icu.text.CaseMap.Title
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -19,33 +21,40 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
+import com.example.bordoiotask.data.response.BordoProjectsItem
 
 @Composable
 fun ShowImageTitleCardView(
     cardPadding: Dp =0.dp,
     image:String,
     title: String,
-    desc:String
+    desc:String,
+    width : Float,
+    height : Dp = 100.dp,
+    clickItem : (()->Unit) ?=null,
 ){
     Card(
         modifier = Modifier
             .fillMaxSize()
-            .padding(cardPadding),
+            .padding(cardPadding)
+            .clickable {
+                clickItem?.invoke()
+            },
         shape = RoundedCornerShape(10.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-        colors = CardDefaults.cardColors(Color(0xFFFCF2FD))
+        colors = CardDefaults.cardColors(Color(0xFFFBE9FD))
     ) {
         Image(
             painter = rememberAsyncImagePainter(model = image),
             modifier = Modifier
-                .width(100.dp)
-                .height(100.dp)
-                .padding(start = 20.dp, top = 20.dp),
+                .fillMaxWidth(width)
+                .height(height)
+                .padding(20.dp),
             contentDescription = "Image",
             contentScale = ContentScale.Crop
         )
         Text(
-            modifier = Modifier.padding(start = 20.dp, top = 20.dp),
+            modifier = Modifier.padding(start = 20.dp, top = 10.dp),
             text = title,
             style = MaterialTheme.typography.headlineLarge,
             color = Color.Black,

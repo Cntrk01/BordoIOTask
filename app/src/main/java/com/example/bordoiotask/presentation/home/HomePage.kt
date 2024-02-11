@@ -52,6 +52,7 @@ import com.example.bordoiotask.data.response.Technologies
 import com.example.bordoiotask.presentation.home.viewmodel.HomeViewModel
 import com.example.bordoiotask.shared_layout.ErrorMessage
 import com.example.bordoiotask.shared_layout.LoadingCardView
+import com.example.bordoiotask.shared_layout.SharedTitleDescription
 import com.example.bordoiotask.shared_layout.ShowImageTitleCardView
 import kotlinx.coroutines.launch
 
@@ -101,16 +102,21 @@ fun HomePage(
             LazyColumn(
                 modifier = Modifier.fillMaxSize()
             ) {
-                items(bordoHomeItemList.value.size) { index ->
-                    bordoHomeItemList.value[index].title?.let {
-                        bordoHomeItemList.value[index].desc?.let { it1 ->
-                            HomePageTitle(
-                                title = it,
-                                content = it1
-                            )
+                items(
+                    count = bordoHomeItemList.value.size,
+                    key = {
+                        bordoHomeItemList.value[it].desc.toString()
+                    },
+                    itemContent = { index ->
+                        bordoHomeItemList.value[index].title?.let {
+                            bordoHomeItemList.value[index].desc?.let { it1 ->
+                                HomePageTitle(
+                                    title = it,
+                                    content = it1
+                                )
+                            }
                         }
-                    }
-                }
+                    })
                 item {
                     TechnologiesCardView(technologiesItem.value)
                 }
@@ -124,27 +130,11 @@ fun HomePageTitle(title: String, content: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(10.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-        colors = CardDefaults.cardColors(Color(0xFFFCF2FD))
+            .padding(15.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
+        colors = CardDefaults.cardColors(Color(0xFFFBE9FD))
     ) {
-        Column(
-            modifier = Modifier
-                .padding(16.dp)
-        ) {
-            Text(
-                text = title,
-                style = MaterialTheme.typography.headlineMedium,
-                color = Color.Black
-            )
-
-            Text(
-                text = content,
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(top = 8.dp),
-                color = Color.Black
-            )
-        }
+        SharedTitleDescription(title = title, content = content)
     }
 }
 
@@ -161,8 +151,8 @@ private fun TechnologiesCardView(technologiesItem: List<Technologies>) {
         modifier = Modifier
             .fillMaxWidth()
             .height(250.dp)
-            .padding(10.dp)
-    ){
+            .padding(15.dp),
+    ) {
         HorizontalPager(
             beyondBoundsPageCount = technologiesItem.size,
             state = pagerState,
@@ -171,7 +161,9 @@ private fun TechnologiesCardView(technologiesItem: List<Technologies>) {
             ShowImageTitleCardView(
                 image = technologiesItem[index].image,
                 title = technologiesItem[index].title,
-                desc = technologiesItem[index].desc)
+                desc = technologiesItem[index].desc,
+                width = 0.25f
+            )
         }
 
         Box(

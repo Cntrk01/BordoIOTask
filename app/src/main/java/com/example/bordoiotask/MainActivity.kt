@@ -88,6 +88,7 @@ fun BottomBarAnimationApp() {
         })
 }
 
+@SuppressLint("SuspiciousIndentation")
 @Composable
 fun BottomBar(navController: NavController, bottomBarState: MutableState<Boolean>) {
     val items = listOf(BottomBarScreen.Home, BottomBarScreen.Projects)
@@ -99,7 +100,7 @@ fun BottomBar(navController: NavController, bottomBarState: MutableState<Boolean
             content = {
                 BottomAppBar (
                     contentColor=Color.Transparent,
-                    modifier = Modifier.clip(RoundedCornerShape(topStart = 15.dp, topEnd = 15.dp)),
+                    //modifier = Modifier.clip(RoundedCornerShape(topStart = 15.dp, topEnd = 15.dp)),
                     contentPadding = PaddingValues(horizontal = 10.dp),
                 ){
                     val navBackStackEntry by navController.currentBackStackEntryAsState()

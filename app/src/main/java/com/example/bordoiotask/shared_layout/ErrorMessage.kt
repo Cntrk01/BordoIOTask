@@ -24,7 +24,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ErrorMessage(errorMessage: String, onRetry: () -> Unit) {
+fun ErrorMessage(errorMessage: String, onRetry: () -> Unit,showRetryButton:Boolean=true) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -47,19 +47,20 @@ fun ErrorMessage(errorMessage: String, onRetry: () -> Unit) {
         // Spacer
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Retry Button
-        IconButton(
-            onClick = { onRetry() },
-            modifier = Modifier
-        ) {
-            Icon(
-                modifier=Modifier
-                    .width(50.dp)
-                    .height(50.dp)
-                    .background(MaterialTheme.colorScheme.primary),
-                imageVector = Icons.Default.Refresh,
-                contentDescription = "Retry"
-            )
+        if (showRetryButton){
+            IconButton(
+                onClick = { onRetry() },
+                modifier = Modifier
+            ) {
+                Icon(
+                    modifier=Modifier
+                        .width(50.dp)
+                        .height(50.dp)
+                        .background(MaterialTheme.colorScheme.primary),
+                    imageVector = Icons.Default.Refresh,
+                    contentDescription = "Retry"
+                )
+            }
         }
     }
 }
