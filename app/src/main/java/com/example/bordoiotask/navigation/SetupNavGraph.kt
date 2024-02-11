@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.bordoiotask.presentation.home.HomePage
+import com.example.bordoiotask.presentation.project.ProjectPage
 
 @Composable
 fun SetupNavGraph(
@@ -18,5 +19,8 @@ fun SetupNavGraph(
             HomePage()
         }
 
+        composable(route=Screen.Projects.route){
+            ProjectPage()
+        }
     }
 }

@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -53,6 +52,7 @@ import com.example.bordoiotask.data.response.Technologies
 import com.example.bordoiotask.presentation.home.viewmodel.HomeViewModel
 import com.example.bordoiotask.shared_layout.ErrorMessage
 import com.example.bordoiotask.shared_layout.LoadingCardView
+import com.example.bordoiotask.shared_layout.ShowImageTitleCardView
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -63,6 +63,7 @@ fun HomePage(
     val state by homeViewModel.state.collectAsState()
     val bordoHomeItemList = remember { mutableStateOf<List<BordoHomeItem>>(emptyList()) }
     val technologiesItem = remember { mutableStateOf<List<Technologies>>(emptyList()) }
+
     Column(
         modifier = Modifier.background(Color(0xFFFCF2FD))
     ) {
@@ -89,6 +90,7 @@ fun HomePage(
         if (state.homeData?.isNotEmpty() == true) {
             state.homeData?.let {
                 bordoHomeItemList.value = it
+
                 it.map { item ->
                     item.technologies?.let { tech ->
                         technologiesItem.value = tech
@@ -124,7 +126,7 @@ fun HomePageTitle(title: String, content: String) {
             .fillMaxWidth()
             .padding(10.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-        colors = CardDefaults.cardColors(Color(0xFFFAE0FD))
+        colors = CardDefaults.cardColors(Color(0xFFFCF2FD))
     ) {
         Column(
             modifier = Modifier
@@ -166,38 +168,10 @@ private fun TechnologiesCardView(technologiesItem: List<Technologies>) {
             state = pagerState,
             key = { it }
         ) { index ->
-            Card(
-                modifier = Modifier
-                    .fillMaxSize(),
-                shape = RoundedCornerShape(10.dp),
-                elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-                colors = CardDefaults.cardColors(Color(0xFFFAE0FD))
-            ) {
-                Image(
-                    painter = rememberAsyncImagePainter(model = technologiesItem[index].image),
-                    modifier = Modifier
-                        .width(100.dp)
-                        .height(100.dp)
-                        .padding(start = 20.dp, top = 20.dp),
-                    contentDescription = "Image",
-                    contentScale = ContentScale.Crop
-                )
-                Text(
-                    modifier = Modifier.padding(start = 20.dp, top = 20.dp),
-                    text = technologiesItem[index].title,
-                    style = MaterialTheme.typography.headlineLarge,
-                    color = Color.Black,
-                    fontWeight = FontWeight.Bold
-                )
-
-                Text(
-                    modifier = Modifier.padding(start = 20.dp, top = 10.dp),
-                    text = technologiesItem[index].desc,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = Color.Black
-                )
-            }
-
+            ShowImageTitleCardView(
+                image = technologiesItem[index].image,
+                title = technologiesItem[index].title,
+                desc = technologiesItem[index].desc)
         }
 
         Box(
