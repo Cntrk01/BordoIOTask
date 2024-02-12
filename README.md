@@ -41,12 +41,11 @@ https://github.com/Cntrk01/BordoIOTask/assets/98031686/89ecf833-c077-4f0f-9a6b-e
 
 
 ## Görseller
-
+![Ekran görüntüsü 2024-02-12 141332](https://github.com/Cntrk01/BordoIOTask/assets/98031686/d1bd60a4-4ad4-45c6-8564-108df4278cbe)
+![Ekran görüntüsü 2024-02-12 141313](https://github.com/Cntrk01/BordoIOTask/assets/98031686/2fb0e464-2c68-493e-afbd-41efb6ff784d)
 ![Ekran görüntüsü 2024-02-12 141440](https://github.com/Cntrk01/BordoIOTask/assets/98031686/6660a771-8ec4-4e69-ae3f-17ebf22f314c)
 ![Ekran görüntüsü 2024-02-12 141435](https://github.com/Cntrk01/BordoIOTask/assets/98031686/b30450de-b7af-468c-a011-cd0d2890f6d6)
 ![Ekran görüntüsü 2024-02-12 141416](https://github.com/Cntrk01/BordoIOTask/assets/98031686/93d970ce-0dc0-40fe-88ec-9483395109c9)
 ![Ekran görüntüsü 2024-02-12 141408](https://github.com/Cntrk01/BordoIOTask/assets/98031686/a144a389-a5ad-4246-abdd-1ef81d1d7c9c)
 ![Ekran görüntüsü 2024-02-12 141401](https://github.com/Cntrk01/BordoIOTask/assets/98031686/c86b1d3f-4257-4300-807b-62d9ede3c958)
-![Ekran görüntüsü 2024-02-12 141332](https://github.com/Cntrk01/BordoIOTask/assets/98031686/d1bd60a4-4ad4-45c6-8564-108df4278cbe)
-![Ekran görüntüsü 2024-02-12 141313](https://github.com/Cntrk01/BordoIOTask/assets/98031686/2fb0e464-2c68-493e-afbd-41efb6ff784d)
 ![Ekran görüntüsü 2024-02-12 141452](https://github.com/Cntrk01/BordoIOTask/assets/98031686/e52269e5-270a-4311-9cdb-ea8797da9f43)
