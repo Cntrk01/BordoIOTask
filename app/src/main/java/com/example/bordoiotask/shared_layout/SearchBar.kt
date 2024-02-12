@@ -50,9 +50,6 @@ fun SearchBar(
                 .shadow(5.dp, CircleShape)
                 .background(Color.White, CircleShape)
                 .padding(horizontal = 20.dp, vertical = 15.dp)
-                .onFocusChanged {
-                    //isHintDisplayed = it !=FocusState.Active Active değişkenini görmedi bende onValueChange içinde yaptım.
-                }
         )
 
         if (isHintDisplayed){
