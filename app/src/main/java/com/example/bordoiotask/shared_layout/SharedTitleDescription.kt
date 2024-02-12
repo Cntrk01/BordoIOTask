@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
+//Sadece başlık ve açıklaması olan durumlar için kullanılır
 @Composable
 fun SharedTitleDescription(
     title: String, content: String

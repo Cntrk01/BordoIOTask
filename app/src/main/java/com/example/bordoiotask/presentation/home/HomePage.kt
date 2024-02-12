@@ -1,7 +1,6 @@
 package com.example.bordoiotask.presentation.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -20,13 +18,8 @@ import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -36,17 +29,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.BottomEnd
 import androidx.compose.ui.Alignment.Companion.CenterEnd
-import androidx.compose.ui.Alignment.Companion.CenterHorizontally
-import androidx.compose.ui.Alignment.Companion.End
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
-import coil.compose.rememberAsyncImagePainter
 import com.example.bordoiotask.data.response.BordoHomeItem
 import com.example.bordoiotask.data.response.Technologies
 import com.example.bordoiotask.presentation.home.viewmodel.HomeViewModel
@@ -56,7 +44,6 @@ import com.example.bordoiotask.shared_layout.SharedTitleDescription
 import com.example.bordoiotask.shared_layout.ShowImageTitleCardView
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomePage(
     homeViewModel: HomeViewModel = hiltViewModel()
@@ -68,12 +55,12 @@ fun HomePage(
     Column(
         modifier = Modifier.background(Color(0xFFFCF2FD))
     ) {
-        TopAppBar(
-            title = {
-                Text(text = "Bordo Io")
-            },
-            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFFFCF2FD))
-        )
+        //TopAppBar(
+        //            title = {
+        //                Text(text = "Bordo Io")
+        //            },
+        //            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFFFCF2FD))
+        //        )
         if (state.loading == true) {
             Box(modifier = Modifier.fillMaxSize()) {
                 LoadingCardView(modifier = Modifier.align(Alignment.Center))

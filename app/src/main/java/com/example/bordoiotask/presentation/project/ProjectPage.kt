@@ -11,12 +11,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -37,7 +33,6 @@ import com.example.bordoiotask.shared_layout.SearchBar
 import com.example.bordoiotask.shared_layout.SharedTitleDescription
 import com.example.bordoiotask.shared_layout.ShowImageTitleCardView
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProjectPage(
     projectViewModel: ProjectViewModel = hiltViewModel()
@@ -51,12 +46,12 @@ fun ProjectPage(
     Column(
         modifier = Modifier.background(Color(0xFFFCF2FD))
     ) {
-        TopAppBar(
-            title = {
-                Text(text = "Bordo Io")
-            },
-            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFFFCF2FD))
-        )
+        //TopAppBar(
+        //            title = {
+        //                Text(text = "Bordo Io")
+        //            },
+        //            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFFFCF2FD))
+        //        )
         SearchBar(
             modifier = Modifier.padding(10.dp),
             hint = "Search Project",

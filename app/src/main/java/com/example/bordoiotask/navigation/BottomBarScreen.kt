@@ -1,6 +1,6 @@
-package com.example.bordoiotask
+package com.example.bordoiotask.navigation
 
-import com.example.bordoiotask.navigation.Screen
+import com.example.bordoiotask.R
 
 sealed class BottomBarScreen(
     val route: String,
